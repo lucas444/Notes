@@ -172,7 +172,7 @@ For more information about red team toolkits, please visit the following: a [Git
 500-599 - Server Errors	This is reserved for errors happening on the server-side and usually indicate quite a major problem with the server handling the request.
 
 Common HTTP Status Codes:
-
+```
 There are a lot of different HTTP status codes and that's not including the fact that applications can even define their own, we'll go over the most common HTTP responses you are likely to come across:
 200 - OK	The request was completed successfully.
 201 - Created	A resource has been created (for example a new user or new blog post).
@@ -187,3 +187,4 @@ There are a lot of different HTTP status codes and that's not including the fact
 503 - Service Unavailable	
 
 This server cannot handle your request as it's either overloaded or down for maintenance.
+```
