@@ -1,46 +1,4 @@
-### Titres
 
-
-# Titre 1
-## Titre 2
-### Titre 3
-#### Titre 4
-##### Titre 5
-###### Titre 6
-
-
-### Texte en gras et en italique
-
-
-**Texte en gras**
-
-*Texte en italique*
-
-
-### Listes
-
-**Liste à puces :**
-
-
-- Élément 1
-- Élément 2
-  - Élément 2.1
-  - Élément 2.2
-- Élément 3
-
-
-**Liste numérotée :**
-
-
-1. Premier élément
-2. Deuxième élément
-3. Troisième élément
-
-
-### Liens
-
-
-[Texte du lien](URL)
 
 
 ### Images
@@ -82,8 +40,8 @@ Code ici
 
 | Colonne 1 | Colonne 2 | Colonne 3 |
 |-----------|-----------|-----------|
-| Ligne 1    | Ligne 1    | Ligne 1    |
-| Ligne 2    | Ligne 2    | Ligne 2    |
+| Ligne 1   | Ligne 1   | Ligne 1   |
+| Ligne 2   | Ligne 2   | Ligne 2   |
 
 
 ### Échapper des caractères
