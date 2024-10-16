@@ -47,7 +47,7 @@ find . -acnewer fstab -print
     #apres modification de fstab
 
 find . -size 12k -print
-find . -size +/-12k -print
+find . -size +/-12k -print:
 
 find . -empty -name source* -type f -print 
     #empty = vide
@@ -139,3 +139,12 @@ tar -tzvf ploud.tar.gz # affiche le comptenue
 tar -xzvf plouf.tar.gz
     #x= extraire
 ```
+
+## USER
+
+> user{add, mod, del}
+> group{add, mod,del}
+
+
+
+
