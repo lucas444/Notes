@@ -1,0 +1,139 @@
+# Tableaux
+
+type identificateur[longueur];
+int tab[20]; 
+
+struct ipv4 int tab[4];
+
+
+##Affichier les élément :
+int main(void)
+{
+    int tab[3] = { 1, 2, 3 };
+
+    printf("Premier élément : %d\n", *tab);
+    printf("Deuxième élément : %d\n", *(tab + 1));
+    printf("Troisième élément : %d\n", tab[2]);
+    return 0;
+}
+
+## Parcours et débordement (Overflow)
+Une des erreurs les plus fréquentes en C consiste à dépasser la taille d’un tableau, ce qui est appelé un cas de débordement (overflow en anglais). En effet, si vous tentez d’accéder à un objet qui ne fait pas partie de votre tableau, vous réalisez un accès mémoire non autorisé, ce qui provoquera un comportement indéfini. Cela arrive généralement lors d’un parcours de tableau à l’aide d’une boucle.
+
+int main(void)
+{
+    int tableau[5] = { 784, 5, 45, -12001, 8 };
+    int somme = 0;
+
+    for (unsigned i = 0; i <= 5; ++i)
+        somme += tableau[i];
+    
+    printf("%d\n", somme);
+    return 0;
+}
+
+## Affichier tout les élément d'un tableau:
+
+void affiche_tableau(int *tab, unsigned taille)
+{
+    for (unsigned i = 0; i < taille; ++i)
+        printf("tab[%u] = %d\n", i, tab[i]);
+}
+
+
+int main(void)
+{
+    int tab[5] = { 2, 45, 67, 89, 123 };
+
+    affiche_tableau(tab, 5);
+    return 0;
+}
+
+// void affiche_tableau(int tab[], unsigned taille)
+
+## Les tableaux multidimensionnels 
+
+int tab[20][35];
+double tab[3][4][5];
+
+###Initialisation avec une longueur explicite
+int t1[2][2] = { { 1, 2 }, { [0] = 3, [1] = 4 } };
+int t2[2][2][2] = { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } };
+
+### Initialisation avec une longueur implicite
+int t1[][2] = { { 1, 2 }, { [0] = 3, [1] = 4 } };
+int t2[][2][2] = { { { 1, 2 }, { 3, 4 } }, { { 5, 6 }, { 7, 8 } } };
+
+### Exemple 
+
+int main(void)
+{
+    int tab[2][2] = { { 1, 2 }, { 3, 4 } };
+
+    printf("tab[0][0] = %d\n", tab[0][0]);
+    printf("tab[0][1] = %d\n", tab[0][1]);
+    printf("tab[1][0] = %d\n", tab[1][0]);
+    printf("tab[1][1] = %d\n", tab[1][1]);
+    return 0;
+}
+
+          Un exemple de tableau
+            à deux dimensions
+                                         Lignes par lignes (row-major order)
+            +---+ +---+ +---+   +---+ +---+ +---+ +---+ +---+ +---+ +---+ +---+ +---+
+            | 1 | | 2 | | 3 |---> 1 | | 2 | | 3 | | 4 | | 5 | | 6 | | 7 | | 8 | | 9 |
+            +---+ +---+ +---+   +---+ +---+ +---+ +-^-+ +---+ +---+ +-^-+ +---+ +---+
+            +---+ +---+ +---+                       |                 |
+            | 4 | | 5 | | 6 |-----------------------+                 |
+            +---+ +---+ +---+                                         |
+            +---+ +---+ +---+                                         |
+            | 7 | | 8 | | 9 |-----------------------------------------+
+            +---+ +---+ +---+
+              |     |     |
+  +-----------+     |     +-----------+
+  |                 |                 |
++-v-+ +---+ +---+ +-v-+ +---+ +---+ +-v-+ +---+ +---+
+| 1 | | 4 | | 7 | | 2 | | 5 | | 8 | | 3 | | 6 | | 9 |
++---+ +---+ +---+ +---+ +---+ +---+ +---+ +---+ +---+
+      Colonnes par colonnes (column-major order)
+
+## fonctions
+
+void affiche_tableau(int (*tab)[2], unsigned n, unsigned m)
+{
+    for (unsigned i = 0; i < n; ++i)
+        for (unsigned j = 0; j < m; ++j)
+            printf("tab[%u][%u] = %d\n", i, j, tab[i][j]);
+}
+
+
+int main(void)
+{
+    int tab[2][2] = { { 1, 2 }, { 3, 4 } };
+
+    affiche_tableau(tab, 2, 2);
+    return 0;
+}
+
+## Les tableaux littéraux 
+
+La syntaxe est similaire à celle des structures.
+
+(type[taille]) { élément1, élément2 }
+
+
+### Exemple
+
+static void affiche_tableau(int *tab, unsigned taille)
+{
+    for (unsigned i = 0; i < taille; ++i)
+        printf("tab[%u] = %d\n", i, tab[i]);
+}
+
+
+int
+main(void)
+{
+    affiche_tableau((int[]) { 1, 2, 3, 4, 5 }, 5);
+    return 0;
+}
