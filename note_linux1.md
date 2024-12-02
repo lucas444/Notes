@@ -56,15 +56,30 @@ séparrer le tmp pour option de montage
 
 ### option de montage 
 
-nodev
-nosuid   -> permet d'executer des droit avec des code 
-noexec
+- nodev     -> desactive l'utilisation des périphérique
+- nosuid    -> permet d'executer des droit avec des code 
+- noexec    -> Empeche l'execution de fichiers binaires
 
 suid permet d'executer qlq chose avec les meme droit que root 
 
-
+> exemple :
+||nodev|nosuid|noexec|
+----------------------
+|/boot||||
+|/tmp|X|X|X|
+|/home|X|||
+|/||||
+|/var|X|||
 ## LVM / ajout disque 
 
+### Création d'un volume logique avec LVM
+
+- Créer une partition de type LVM : `fdisk`
+- Initialiser le volume physique :`pvcreate /dev/sdX`
+- Créer un groupe de volumes : `vgcreate nom_vg /dev/sdX`
+-  Créer un volume logique : `lvcreate -L taille -n nom_lv nom_vg`
+- Formater le volume : `mkfs.ext4 /dev/nom_vg/nom_lv`
+- Monter le volume : `mount /dev/nom_vg/nom_lv /point/de/montage`
 
 ## User
 
@@ -110,6 +125,7 @@ watch = voir a jour
 
 rfkill
 lspci
+ps sn
 
 
 propsmoke for esxi 

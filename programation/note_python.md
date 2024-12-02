@@ -24,30 +24,36 @@ for i in range(5):
      print(i)
 ```
 
-## Fichier :
+## Manipulation des fichiers
 
-```py
+###Lecture de fichier
 
-f = open("flag.txt","r")
+```python
+
+f = open("flag.txt", "r")
 print(f.read())
+f.close()  # Pensez à fermer le fichier après utilisation
+```
+###Écriture dans un fichier
 
+- Ajout de texte à un fichier existant :
 
+```python
 
-
-f = open("demofile1.txt", "a") # Append to an existing file
-f.write("The file will include more text..")
+f = open("demofile1.txt", "a")
+f.write("Le fichier contient maintenant plus de texte.")
 f.close()
+```
+- Création et écriture dans un nouveau fichier :
 
-f = open("demofile2.txt", "w") # Creating and writing to a new file
-f.write("demofile2 file created, with this content in!")
+```python
+
+f = open("demofile2.txt", "w")
+f.write("Le fichier demofile2 a été créé avec ce contenu.")
 f.close()
-
 ```
 
-
-
 ## type de données
-
 ```py
 a ="hello word"
 # string
