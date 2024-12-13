@@ -11,6 +11,10 @@
 ## Whiterose
 
 https://eslam.io/posts/ejs-server-side-template-injection-rce/?source=post_page-----288b3019f87f--------------------------------
+
+https://www.jasonturley.xyz/how-to-stabilize-a-reverse-shell/
+
+
 sudo nmap 10.10.157.248 -A -T 4 -v
 
 10.10.157.248
