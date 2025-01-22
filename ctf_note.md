@@ -56,3 +56,19 @@ Gayle Bev: Of course! My password is 'p~]P@5!6;rs558:q'
 
 
 /home/web/app/views/settings.ejs:
+
+
+
+
+
+# ctf mr robot 
+
+ john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt password.raw-md5 
+
+
+
+https://github.com/peass-ng/PEASS-ng/blob/master/linPEAS/README.md
+
+
+
+find / -perm -4000 2>/dev/null
